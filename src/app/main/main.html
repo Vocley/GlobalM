@@ -24,8 +24,8 @@
                         <span class="req" ng-if="contForm.fName.$pristine">*required</span>
                         <span ng-if="contForm.fName.$dirty && checkName === true && !contForm.fName.$error.required && !contForm.fName.$error.pattern">Hello {{main.contact.firstName}}</span>
                         <div ng-show="contForm.$submitted || contForm.fName.$dirty">
-                            <span ng-show="contForm.fName.$error.required">We would love to know your name.</span>
-                            <span ng-show="contForm.fName.$error.pattern">Is that your real name?</span>
+                            <span ng-show="contForm.fName.$error.required">Can we have your name?</span>
+                            <span ng-show="contForm.fName.$error.pattern">Letters only please</span>
                         </div>
                     </div>
                 </div>
@@ -41,8 +41,8 @@
                         <span class="req" ng-if="contForm.sName.$pristine">*required</span>
                         <span ng-if="contForm.sName.$dirty && checkSurname === true && !contForm.sName.$error.required && !contForm.sName.$error.pattern"><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
                         <div ng-show="contForm.$submitted || contForm.sName.$dirty">
-                            <span ng-show="contForm.sName.$error.required">I'm afraid your surname is necessary.</span>
-                            <span ng-show="contForm.sName.$error.pattern">Is that your real name?</span>
+                            <span ng-show="contForm.sName.$error.required">Can we have your surname?</span>
+                            <span ng-show="contForm.sName.$error.pattern">Letters only please</span>
                         </div>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
                         <span class="req" ng-if="contForm.email.$pristine">*required</span>
                         <span ng-if="contForm.email.$dirty && checkEmail === true && !contForm.email.$error.required && !contForm.email.$error.email"><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
                         <div ng-show="contForm.$submitted || contForm.email.$dirty">
-                            <span ng-show="contForm.email.$error.required">We need your email to be able to contact you?</span>
-                            <span ng-show="contForm.email.$error.email">Oops this email doesnt look right?</span>
+                            <span ng-show="contForm.email.$error.required">Can we have your email?</span>
+                            <span ng-show="contForm.email.$error.email">Oops this email doesnt look right</span>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                         <span class="req" ng-if="contForm.phone.$pristine">*required</span>
                         <span ng-if="contForm.phone.$dirty && checkPhone === true && !contForm.phone.$error.required"><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
                         <div ng-show="contForm.$submitted || contForm.phone.$dirty">
-                            <span ng-show="contForm.phone.$error.required">Your phone number will be very useful</span>
+                            <span ng-show="contForm.phone.$error.required">Can we have your phone number?</span>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                 <label id="ariaFormLinkedIn" for="linkedInForm">LinkedIn</label>
                 <div class="inputContainer ">
                     <div class="inputField ">
-                        <input type="url" id="linkedInForm" name="linkedIn" placeholder="LinkedIn" ng-model="main.contact.linkedIn" ng-blur="checkLinkedIn = true" ng-init="checkLinkedIn = false" aria-labelledby="ariaFormLinkedIn" aria-required="false">
+                        <input type="url" id="linkedInForm" name="linkedIn" placeholder="https://www.linkedin.com/in/username" ng-model="main.contact.linkedIn" ng-blur="checkLinkedIn = true" ng-init="checkLinkedIn = false" aria-labelledby="ariaFormLinkedIn" aria-required="false">
                     </div>
                     <div class="comments " ng-class="{'errorText': !contForm.linkedIn.$pristine && contForm.linkedIn.$error.url}">
                         <span ng-if="contForm.linkedIn.$dirty && checkLinkedIn === true && !contForm.linkedIn.$error.url && main.contact.linkedIn !== ''"><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
@@ -97,10 +97,10 @@
             <div class="form-group col-md-6 col-lg-6">
                 <label id="ariaFormWebsite" for="websiteForm">Personal website/Portfolio</label>
                 <div class="inputField ">
-                    <input type="url" id="websiteForm" name="website" placeholder="Personal website or Portfolio" ng-model="main.contact.website" ng-blur="checkWebsite = true" ng-init="checkWebsite = false" aria-labelledby="ariaFormWebsite" aria-required="false">
+                    <input type="url" id="websiteForm" name="website" placeholder="http://www.mywebsite.com" ng-model="main.contact.website" ng-blur="checkWebsite = true" ng-init="checkWebsite = false" aria-labelledby="ariaFormWebsite" aria-required="false">
                 </div>
                 <div class="comments " ng-class="{'errorText': !contForm.website.$pristine && contForm.website.$error.url}"><span ng-if="contForm.website.$dirty && checkWebsite === true && !contForm.website.$error.url && main.contact.website !== '' "><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
-                    <span ng-show="contForm.website.$error.url">That doesn't look right</span>
+                    <span ng-show="contForm.website.$error.url">That doesn't look right. We need http://</span>
                 </div>
             </div>
             <!-- UPLOAD  uploadField -->
@@ -108,7 +108,7 @@
                 <label id="ariaFormUpload" for="uploadCV">Upload CV</label>
                 <div class="uploadField row">
                     <div class="inputField col-xs-6 col-sm-8 col-md-9 col-lg-9 col-xl-10">
-                        <input ng-click="main.browse()" class="placeholder" placeholder="test" value="{{main.fileName}}"></input><span ng-if="main.contact.upload !== 'main.fileName'"></span>
+                        <input ng-click="main.browse()" class="placeholder" placeholder=".pdf or .doc files only" value="{{main.fileName}}"></input><span ng-if="main.contact.upload !== 'main.fileName'"></span>
                     </div>
                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 btnField">
                         <div class="btn btn-default btn-file">
@@ -122,7 +122,7 @@
             <div class="form-group col-md-6 col-lg-6">
                 <label id="ariaFormMessage" for="messageForm">Message</label>
                 <div class="inputField">
-                    <textarea id="messageForm" name="message" inputContainers="4" placeholder="Message" ng-model="main.contact.message" ng-blur="checkMsg = true" ng-init="checkMsg = false" aria-labelledby="ariaFormMessage" aria-required="false">Would you like to add anything else to your application</textarea>
+                    <textarea id="messageForm" name="message" inputContainers="4" placeholder="Comments" ng-model="main.contact.message" ng-blur="checkMsg = true" ng-init="checkMsg = false" aria-labelledby="ariaFormMessage" aria-required="false"></textarea>
                 </div>
                 <div class="comments">
                     <span ng-if="contForm.website.$dirty && checkMsg === true && main.contact.message !== ''  "><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
@@ -130,7 +130,7 @@
             </div>
             <div class="form-group col-md-12 col-lg-12">
                 <div ng-if="contForm.$submitted && contForm.$invalid" class="red bottomErrors">
-                    Error - form not submitted.
+                    Error - form not valid.
                 </div>
                 <div ng-if="main.feedbackMessage !== ''" class="bottomErrors {{main.feedbackColor}}">
                     {{main.feedbackMessage}}
