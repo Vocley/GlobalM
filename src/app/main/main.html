@@ -108,7 +108,7 @@
                 <label id="ariaFormUpload" for="uploadCV">Upload CV</label>
                 <div class="uploadField row">
                     <div class="inputField col-xs-6 col-sm-8 col-md-9 col-lg-9 col-xl-10">
-                        <input ng-click="main.browse()" class="placeholder" placeholder=".pdf or .doc files only" value="{{main.fileName}}"></input><span ng-if="main.contact.upload !== 'main.fileName'"></span>
+                        <input ng-touch="main.browse()" class="placeholder" placeholder=".pdf or .doc files only" value="{{main.fileName}}"></input><span ng-if="main.contact.upload !== 'main.fileName'"></span>
                     </div>
                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 btnField">
                         <div class="btn btn-default btn-file">
@@ -139,7 +139,7 @@
             <!-- APPLY -->
             <div class="form-group col-md-12 col-lg-12">
                 <div class="outApplyBtn">
-                    <button class="btn btn-file applyBtn" ng-disabled="contForm.$invalid" ng-click="main.clickSubmit()" type="submit">{{main.sendButton}}</button>
+                    <button class="btn btn-file applyBtn" ng-disabled="contForm.$invalid" ng-touch="main.clickSubmit()" type="submit">{{main.sendButton}}</button>
                 </div>
             </div>
         </form>
