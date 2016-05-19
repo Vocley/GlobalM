@@ -1,16 +1,19 @@
 # GlobalM
-contact form for GlobalM
+
+> contact form for GlobalM
 
 
-------------------- prerequisite ---------------------------
+## Prerequisites 
 
 to run the project you will need node.js, bower and gulp
 
 
------------------- installation ----------------------------
+## Installation
 
 1. clone the project
-2. cd into the project in the command prompt
-3. run npm install
-4. run bower install
-5. run gulp serve
+2. cd into the project route in the command prompt and run
+```bash 
+npm install
+bower install
+gulp serve
+ ```
