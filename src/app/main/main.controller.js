@@ -79,7 +79,7 @@
                         vm.isSending = false;
                         vm.sendButton = 'Apply';
                         vm.feedbackColor = 'red';
-                        vm.feedbackMessage = 'Oops....Something went wrong. Please try again later.';
+                        vm.feedbackMessage = 'Oops....Something went wrong.';
                         
                     });
             }
