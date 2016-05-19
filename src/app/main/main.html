@@ -1,0 +1,148 @@
+<div class="wrapper container-fluid">
+    <div class="header">
+        <div class="outImgContainer">
+            <div class="imgContainer">
+                <img src="assets/images/website-home-logo.png" class="img-responsive" alt="GlobalM">
+            </div>
+        </div>
+        <h2>
+      Work With Us
+    </h2>
+        <div class="colorLine">
+        </div>
+    </div>
+    <div class="contactFormContainer container-fluid row">
+        <form name="contForm" id="contactForm" class="form" role="form" ng-submit="main.submitForm(contForm.$valid)" novalidate>
+            <!-- FIRST NAME -->
+            <div class="form-group col-md-6 col-lg-6">
+                <label id="ariaFormFName" for="nameForm">Name</label>
+                <div class="inputContainer ">
+                    <div class="inputField ">
+                        <input type="text" id="nameForm" name="fName" placeholder="Name" ng-model="main.contact.firstName" aria-labelledby="ariaFormFName" ng-pattern="/^[a-z ,.'-]+$/i" ng-blur="checkName = true" ng-init="checkName = false" aria-required="true" required>
+                    </div>
+                    <div class="comments" ng-class="{'errorText': (!contForm.fName.$pristine && contForm.fName.$error.required) || (!contForm.fName.$pristine && contForm.fName.$error.pattern), 'successText': contForm.fName.$dirty && checkName === true && !contForm.fName.$error.required && !contForm.fName.$error.pattern}">
+                        <span class="req" ng-if="contForm.fName.$pristine">*required</span>
+                        <span ng-if="contForm.fName.$dirty && checkName === true && !contForm.fName.$error.required && !contForm.fName.$error.pattern">Hello {{main.contact.firstName}}</span>
+                        <div ng-show="contForm.$submitted || contForm.fName.$dirty">
+                            <span ng-show="contForm.fName.$error.required">We would love to know your name.</span>
+                            <span ng-show="contForm.fName.$error.pattern">Is that your real name?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SECOND NAME -->
+            <div class="form-group col-md-6 col-lg-6">
+                <label id="ariaFormSName" for="surnameForm">Surname</label>
+                <div class="inputContainer ">
+                    <div class="inputField ">
+                        <input type="text" id="surnameForm" name="sName" placeholder="Surname" ng-model="main.contact.secondName" aria-labelledby="ariaFormSName" ng-pattern="/^[a-z ,.'-]+$/i" ng-blur="checkSurname = true" ng-init="checkSurname = false" aria-required="true" required>
+                    </div>
+                    <div class="comments " ng-class="{'errorText': (!contForm.sName.$pristine && contForm.sName.$error.required) || (!contForm.sName.$pristine && contForm.sName.$error.pattern)}">
+                        <span class="req" ng-if="contForm.sName.$pristine">*required</span>
+                        <span ng-if="contForm.sName.$dirty && checkSurname === true && !contForm.sName.$error.required && !contForm.sName.$error.pattern"><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
+                        <div ng-show="contForm.$submitted || contForm.sName.$dirty">
+                            <span ng-show="contForm.sName.$error.required">I'm afraid your surname is necessary.</span>
+                            <span ng-show="contForm.sName.$error.pattern">Is that your real name?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- EMAIL -->
+            <div class="form-group col-md-6 col-lg-6">
+                <label id="ariaFormEmail" for="emailForm">Email</label>
+                <div class="inputContainer ">
+                    <div class="inputField ">
+                        <input type="email" id="emailForm" name="email" placeholder="Email" ng-model="main.contact.email" ng-blur="checkEmail = true" ng-init="checkEmail = false" aria-labelledby="ariaFormEmail" aria-required="true" required>
+                    </div>
+                    <div class="comments " ng-class="{'errorText': (!contForm.email.$pristine && contForm.email.$error.required) || (!contForm.email.$pristine && contForm.email.$error.email)}">
+                        <span class="req" ng-if="contForm.email.$pristine">*required</span>
+                        <span ng-if="contForm.email.$dirty && checkEmail === true && !contForm.email.$error.required && !contForm.email.$error.email"><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
+                        <div ng-show="contForm.$submitted || contForm.email.$dirty">
+                            <span ng-show="contForm.email.$error.required">We need your email to be able to contact you?</span>
+                            <span ng-show="contForm.email.$error.email">Oops this email doesnt look right?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PHONE -->
+            <div class="form-group col-md-6 col-lg-6">
+                <label id="ariaFormPhone" for="phoneForm">Phone</label>
+                <div class="inputContainer ">
+                    <div class="inputField ">
+                        <input type="tel" id="phoneForm" name="phone" placeholder="Phone" ng-model="main.contact.phone" ng-blur="checkPhone = true" ng-init="checkPhone = false" aria-labelledby="ariaFormPhone" aria-required="true" required>
+                    </div>
+                    <div class="comments " ng-class="{'errorText': !contForm.phone.$pristine && contForm.phone.$error.required}">
+                        <span class="req" ng-if="contForm.phone.$pristine">*required</span>
+                        <span ng-if="contForm.phone.$dirty && checkPhone === true && !contForm.phone.$error.required"><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
+                        <div ng-show="contForm.$submitted || contForm.phone.$dirty">
+                            <span ng-show="contForm.phone.$error.required">Your phone number will be very useful</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- LINKEDIN -->
+            <div class="form-group col-md-6 col-lg-6">
+                <label id="ariaFormLinkedIn" for="linkedInForm">LinkedIn</label>
+                <div class="inputContainer ">
+                    <div class="inputField ">
+                        <input type="url" id="linkedInForm" name="linkedIn" placeholder="LinkedIn" ng-model="main.contact.linkedIn" ng-blur="checkLinkedIn = true" ng-init="checkLinkedIn = false" aria-labelledby="ariaFormLinkedIn" aria-required="false">
+                    </div>
+                    <div class="comments " ng-class="{'errorText': !contForm.linkedIn.$pristine && contForm.linkedIn.$error.url}">
+                        <span ng-if="contForm.linkedIn.$dirty && checkLinkedIn === true && !contForm.linkedIn.$error.url && main.contact.linkedIn !== ''"><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
+                        <span ng-show="contForm.linkedIn.$error.url">That doesn't look right. We need http://</span>
+                    </div>
+                </div>
+            </div>
+            <!-- WEBSITE -->
+            <div class="form-group col-md-6 col-lg-6">
+                <label id="ariaFormWebsite" for="websiteForm">Personal website/Portfolio</label>
+                <div class="inputField ">
+                    <input type="url" id="websiteForm" name="website" placeholder="Personal website or Portfolio" ng-model="main.contact.website" ng-blur="checkWebsite = true" ng-init="checkWebsite = false" aria-labelledby="ariaFormWebsite" aria-required="false">
+                </div>
+                <div class="comments " ng-class="{'errorText': !contForm.website.$pristine && contForm.website.$error.url}"><span ng-if="contForm.website.$dirty && checkWebsite === true && !contForm.website.$error.url && main.contact.website !== '' "><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
+                    <span ng-show="contForm.website.$error.url">That doesn't look right</span>
+                </div>
+            </div>
+            <!-- UPLOAD  uploadField -->
+            <div class="form-group col-md-6 col-lg-6">
+                <label id="ariaFormUpload" for="uploadCV">Upload CV</label>
+                <div class="uploadField row">
+                    <div class="inputField col-xs-6 col-sm-8 col-md-9 col-lg-9 col-xl-10">
+                        <input ng-click="main.browse()" class="placeholder" placeholder="test" value="{{main.fileName}}"></input><span ng-if="main.contact.upload !== 'main.fileName'"></span>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-xl-2 btnField">
+                        <div class="btn btn-default btn-file">
+                            <span>Browse</span>
+                            <input id="browseBtn" type="file" ng-model="main.contact.upload" aria-labelledby="ariaFormUpload" aria-required="false">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MESSAGE -->
+            <div class="form-group col-md-6 col-lg-6">
+                <label id="ariaFormMessage" for="messageForm">Message</label>
+                <div class="inputField">
+                    <textarea id="messageForm" name="message" inputContainers="4" placeholder="Message" ng-model="main.contact.message" ng-blur="checkMsg = true" ng-init="checkMsg = false" aria-labelledby="ariaFormMessage" aria-required="false">Would you like to add anything else to your application</textarea>
+                </div>
+                <div class="comments">
+                    <span ng-if="contForm.website.$dirty && checkMsg === true && main.contact.message !== ''  "><img src="assets/images/greenCheckMark.svg" alt="check icon"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-12 col-lg-12">
+                <div ng-if="contForm.$submitted && contForm.$invalid" class="red bottomErrors">
+                    Error - form not submitted.
+                </div>
+                <div ng-if="main.feedbackMessage !== ''" class="bottomErrors {{main.feedbackColor}}">
+                    {{main.feedbackMessage}}
+                </div>
+            </div>
+            <!-- APPLY -->
+            <div class="form-group col-md-12 col-lg-12">
+                <div class="outApplyBtn">
+                    <button class="btn btn-file applyBtn" ng-disabled="contForm.$invalid" ng-click="main.clickSubmit()" type="submit">{{main.sendButton}}</button>
+                </div>
+            </div>
+        </form>
+        <!-- ng-class="{'{{main.feedbackColor}}': contForm.$submitted}" -->
+    </div>
+</div>
