@@ -50,7 +50,7 @@
 
                 //ajaxService.postAjax('#', vm.contact)
                 //this is a mock service mockPostSuccess() for success mockPostFail() for fail - use above line for actual posting service
-                ajaxService.mockPostFail()
+                ajaxService.mockPostSuccess()
                     .then(function() {
                         //success
                         vm.isSending = false;
